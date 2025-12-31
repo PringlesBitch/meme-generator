@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Meme Generator</h1>
+            <p>Create hilarious memes in seconds!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="upload-section">
+                    <label for="imageInput" class="upload-btn">
+                        📷 Upload Your Own Image
+                    </label>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <p class="upload-hint">Click to browse or drag & drop an image here</p>
+                    <div id="dropZone" class="drop-zone">
+                        <p>📁 Drag & Drop Image Here</p>
+                    </div>
+                </div>
+
+                <div class="templates-section">
+                    <div class="templates-header">
+                        <h3>Default Templates</h3>
+                        <span id="templateCount" class="template-count">0 templates</span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="templateSearch" placeholder="🔍 Search templates...">
+                    </div>
+                    <div id="templatesGallery" class="templates-gallery">
+                        <p class="loading-text">Loading templates...</p>
+                    </div>
+                    <div class="pagination-controls">
+                        <button id="prevPage" class="page-btn" disabled>← Previous</button>
+                        <span id="pageInfo" class="page-info">Page 1 of 1</span>
+                        <button id="nextPage" class="page-btn" disabled>Next →</button>
+                    </div>
+                    <div class="view-options">
+                        <button id="showAllBtn" class="view-btn">Show All</button>
+                        <button id="showMoreBtn" class="view-btn active">Pagination</button>
+                    </div>
+                </div>
+
+                <div class="text-controls">
+                    <h3>Text Controls</h3>
+                    
+                    <div class="text-input-group">
+                        <label for="topText">Top Text:</label>
+                        <input type="text" id="topText" placeholder="Enter top text...">
+                    </div>
+
+                    <div class="text-input-group">
+                        <label for="bottomText">Bottom Text:</label>
+                        <input type="text" id="bottomText" placeholder="Enter bottom text...">
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="fontSize">Font Size: <span id="fontSizeValue">40</span>px</label>
+                        <input type="range" id="fontSize" min="20" max="100" value="40">
+                    </div>
+
+                    <div class="color-group">
+                        <label for="textColor">Text Color:</label>
+                        <input type="color" id="textColor" value="#00ff00">
+                    </div>
+
+                    <div class="border-controls">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="enableBorder" checked>
+                            <label for="enableBorder">Enable Border</label>
+                        </div>
+                        <div class="color-group" id="borderColorGroup">
+                            <label for="borderColor">Border Color:</label>
+                            <input type="color" id="borderColor" value="#000000">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="downloadBtn" class="download-btn" disabled>
+                    💾 Download Meme
+                </button>
+            </div>
+
+            <div class="canvas-section">
+                <div class="canvas-wrapper">
+                    <canvas id="memeCanvas"></canvas>
+                    <div id="placeholder" class="placeholder">
+                        <p>📸 Select an image to get started</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
